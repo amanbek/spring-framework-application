@@ -19,6 +19,20 @@
 		class="edu.stping_framework_app.music.RockMusic">
 	</bean>
 
+	<bean id="music-player-1"
+		class="edu.stping_framework_app.entities.MusicPlayer">
+		<constructor-arg ref="classical-music-1"></constructor-arg>
+	</bean>
+	
+		<bean id="music-player-2"
+		class="edu.stping_framework_app.entities.MusicPlayer">
+		<constructor-arg ref="rock-music-1"></constructor-arg>
+	</bean>
+	
+		<bean id="music-player-3"
+		class="edu.stping_framework_app.entities.MusicPlayer">
+		<constructor-arg ref="pop-music-1"></constructor-arg>
+	</bean>
 
 
 </beans>
