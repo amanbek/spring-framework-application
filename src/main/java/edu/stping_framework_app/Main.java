@@ -13,8 +13,6 @@ public class Main {
 			MusicPlayer player = context.getBean ("music-player-1", MusicPlayer.class);
 			player.playSong ();
 			player.getPlayerInfo ();
-			
-			
 
 		} catch (BeansException e) {
 			e.printStackTrace ();
