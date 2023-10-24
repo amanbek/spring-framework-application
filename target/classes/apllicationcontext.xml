@@ -22,6 +22,8 @@
 	<bean id="music-player-1"
 		class="edu.stping_framework_app.entities.MusicPlayer">
 		<property name="music" ref="classical-music-1"/>
+		<property name="trackName" value="Liszt - Hungarian Rhapsody No. 2"/>
+		<property name="volume" value="60"/>
 	</bean>
 
 	<bean id="music-player-2"
