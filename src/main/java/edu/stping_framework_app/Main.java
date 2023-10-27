@@ -11,8 +11,8 @@ public class Main {
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext ("apllicationcontext.xml")) {
 
 			MusicPlayer player = context.getBean ("music-player-1", MusicPlayer.class);
-			player.playSong ();
 			player.getPlayerInfo ();
+			player.playPlayList ();
 
 		} catch (BeansException e) {
 			e.printStackTrace ();

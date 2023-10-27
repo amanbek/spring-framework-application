@@ -10,6 +10,7 @@
 	<context:property-placeholder
 		location="classpath:musicPlayer.properties" />
 
+	<!-- Music beans -->
 	<bean id="classical-music-1"
 		class="edu.stping_framework_app.music.ClassicalMusic">
 	</bean>
@@ -22,22 +23,51 @@
 		class="edu.stping_framework_app.music.RockMusic">
 	</bean>
 
+	<bean id="classical-music-2"
+		class="edu.stping_framework_app.music.ClassicalMusic"
+		init-method="doMyInit" destroy-method="doMyDestroy">
+	</bean>
+
+
+	<!-- Music Player beans -->
 	<bean id="music-player-1"
-		class="edu.stping_framework_app.entities.MusicPlayer">
+		class="edu.stping_framework_app.entities.MusicPlayer"
+		scope="prototype">
+		<constructor-arg>
+			<list>
+				<ref bean="pop-music-1" />
+				<ref bean="rock-music-1" />
+				<ref bean="classical-music-1" />
+			</list>
+		</constructor-arg>
 		<property name="music" ref="classical-music-1" />
-		<property name="trackName"
-			value="${musicPlayer.trackName}" />
+		<property name="trackName" value="${musicPlayer.trackName}" />
 		<property name="volume" value="${musicPlayer.volume}" />
+		<property name="model" value="${musicPlayer.model}" />
 	</bean>
 
 	<bean id="music-player-2"
-		class="edu.stping_framework_app.entities.MusicPlayer">
+		class="edu.stping_framework_app.entities.MusicPlayer"
+		scope="prototype">
 		<constructor-arg ref="rock-music-1"></constructor-arg>
 	</bean>
 
 	<bean id="music-player-3"
-		class="edu.stping_framework_app.entities.MusicPlayer">
+		class="edu.stping_framework_app.entities.MusicPlayer"
+		scope="prototype">
 		<constructor-arg ref="pop-music-1"></constructor-arg>
+	</bean>
+
+	<bean id="music-player-4"
+		class="edu.stping_framework_app.entities.MusicPlayer"
+		scope="prototype">
+		<constructor-arg>
+			<list>
+				<ref bean="pop-music-1" />
+				<ref bean="rock-music-1" />
+				<ref bean="classical-music-1" />
+			</list>
+		</constructor-arg>
 	</bean>
 
 

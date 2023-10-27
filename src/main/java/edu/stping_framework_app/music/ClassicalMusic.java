@@ -6,4 +6,12 @@ public class ClassicalMusic implements Music {
 	public String getSong () {
 		return "Liszt - Hungarian Rhapsody No. 2";
 	}
+	
+	public void doMyInit() {
+		System.out.println ("Initialization is done successfully!");
+	}
+	
+	public void doMyDestroy() {
+		System.out.println ("Bean Destroyed successfully!");
+	}
 }
