@@ -1,4 +1,4 @@
-package edu.stping_framework_app.music;
+package edu.spring_framework_app.music;
 
 public interface Music {
 	public String getSong();

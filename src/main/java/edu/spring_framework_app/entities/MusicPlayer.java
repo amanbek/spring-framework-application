@@ -1,12 +1,16 @@
-package edu.stping_framework_app.entities;
+package edu.spring_framework_app.entities;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import edu.stping_framework_app.music.Music;
+import org.springframework.stereotype.Component;
 
+import edu.spring_framework_app.music.Music;
+
+
+@ Component ("music-player")
 public class MusicPlayer {
 	private Music       music;
 	private String      trackName;
@@ -43,6 +47,15 @@ public class MusicPlayer {
 		for (Music music : playList) {
 			System.out.println ("\t" + music.getSong ());
 		}
+	}
+
+	public MusicPlayer addSongToPlayList (Music... musics) {
+		MusicPlayer mp = new MusicPlayer ();
+
+		mp.playList.addAll (Arrays.asList (musics));
+		
+		return mp;
+
 	}
 
 	public Music getMusic () {

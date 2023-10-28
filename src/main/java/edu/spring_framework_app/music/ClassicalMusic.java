@@ -1,5 +1,8 @@
-package edu.stping_framework_app.music;
+package edu.spring_framework_app.music;
 
+import org.springframework.stereotype.Component;
+
+@Component("classical-music")
 public class ClassicalMusic implements Music {
 	
 	private ClassicalMusic() {
