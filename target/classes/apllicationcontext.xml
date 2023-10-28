@@ -8,11 +8,17 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:property-placeholder
-		location="classpath:musicPlayer.properties" />
+		location="classpath:music-player.properties" />
 
 	<!-- Music beans -->
 	<bean id="classical-music-1"
 		class="edu.stping_framework_app.music.ClassicalMusic">
+	</bean>
+
+	<bean id="classical-music-2"
+		class="edu.stping_framework_app.music.ClassicalMusic"
+		factory-method="getInstance"
+		init-method="doMyInit" destroy-method="doMyDestroy">
 	</bean>
 
 	<bean id="pop-music-1"
@@ -23,10 +29,7 @@
 		class="edu.stping_framework_app.music.RockMusic">
 	</bean>
 
-	<bean id="classical-music-2"
-		class="edu.stping_framework_app.music.ClassicalMusic"
-		init-method="doMyInit" destroy-method="doMyDestroy">
-	</bean>
+
 
 
 	<!-- Music Player beans -->
