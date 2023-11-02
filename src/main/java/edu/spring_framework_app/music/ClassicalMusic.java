@@ -19,15 +19,15 @@ public class ClassicalMusic implements Music {
 		return "Liszt - Hungarian Rhapsody No. 2";
 	}
 	
-	@PostConstruct
-	public void doMyInit () {
-		System.out.println ("Bean of ClassicalMusic class has been initialized successfully!");
-	}
-
-	@PreDestroy
-	public void doMyDestroy () {
-		System.out.println ("Bean of ClassicalMusic class has been destroyed successfully!");
-	}
+//	@PostConstruct
+//	public void doMyInit () {
+//		System.out.println ("Bean of ClassicalMusic class has been initialized successfully!");
+//	}
+//
+//	@PreDestroy
+//	public void doMyDestroy () {
+//		System.out.println ("Bean of ClassicalMusic class has been destroyed successfully!");
+//	}
 
 	public static ClassicalMusic getInstance () {
 		return new ClassicalMusic ();

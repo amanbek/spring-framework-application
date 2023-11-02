@@ -16,15 +16,17 @@ public class PopMusic implements Music {
 		return "Lady Gaga - Paparazi";
 	}
 
-	@ PostConstruct
-	public void init () {
-		System.out.println ("Bean of PopMusic class has been initialized successfully!");
-	}
-
-	@ PreDestroy
-	public void destr () {
-		System.out.println ("Bean of PopMusic class has been destroyed successfully!");
-	}
+	// @ PostConstruct
+	// public void init () {
+	// System.out.println ("Bean of PopMusic class has been initialized
+	// successfully!");
+	// }
+	//
+	// @ PreDestroy
+	// public void destr () {
+	// System.out.println ("Bean of PopMusic class has been destroyed
+	// successfully!");
+	// }
 
 	public String getSongName () {
 		return songName;

@@ -14,5 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 
 public class ToConfigurate {
 	static final String PROPERTY_SOURCE = "classpath:music-player.properties";
-
+	
+	
 }
