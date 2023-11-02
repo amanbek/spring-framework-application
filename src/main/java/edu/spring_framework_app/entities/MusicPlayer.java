@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import edu.spring_framework_app.music.Music;
 
 
-@ Component ("music-player")
+@ Component ("music-player-component")
 public class MusicPlayer {
 	private Music       music;
 	private String      trackName;
