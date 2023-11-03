@@ -5,16 +5,17 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
 import edu.spring_framework_app.music.Music;
 
-
-@ Component ("music-player-component")
 public class MusicPlayer {
 	private Music       music;
+	@ Value ("${musicPlayer.trackName}")
 	private String      trackName;
+	@ Value ("${musicPlayer.volume}")
 	private int         volume;
+	@ Value ("${musicPlayer.model}")
 	private String      model;
 	private List<Music> playList = new ArrayList<Music> ();
 
@@ -53,7 +54,7 @@ public class MusicPlayer {
 		MusicPlayer mp = new MusicPlayer ();
 
 		mp.playList.addAll (Arrays.asList (musics));
-		
+
 		return mp;
 
 	}
@@ -94,8 +95,15 @@ public class MusicPlayer {
 		return model;
 	}
 
+	@ Value ("${musicPlayer.model}")
 	public void setModel (String model) {
 		this.model = model;
+	}
+
+	public void getListOfTrackNames () {
+		for (Music music : this.getPlayList ()) {
+			music.getListOfTrackNames ();
+		}
 	}
 
 	@ Override

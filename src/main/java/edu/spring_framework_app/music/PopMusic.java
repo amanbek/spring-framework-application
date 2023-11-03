@@ -1,39 +1,30 @@
 package edu.spring_framework_app.music;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import org.springframework.beans.factory.annotation.Value;
 
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
-
-@ Component ("pop-music-component")
-@ Scope ("prototype")
 public class PopMusic implements Music {
-	private String songName;
+	@ Value ("${popMusic.trackNames}")
+	private String [] trackNames;
+
+	public String [] getTrackNames () {
+		return trackNames;
+	}
+
+	public void setTrackNames (String [] trackName) {
+		this.trackNames = trackName;
+	}
 
 	@ Override
 	public String getSong () {
 		return "Lady Gaga - Paparazi";
 	}
 
-	// @ PostConstruct
-	// public void init () {
-	// System.out.println ("Bean of PopMusic class has been initialized
-	// successfully!");
-	// }
-	//
-	// @ PreDestroy
-	// public void destr () {
-	// System.out.println ("Bean of PopMusic class has been destroyed
-	// successfully!");
-	// }
-
-	public String getSongName () {
-		return songName;
-	}
-
-	public void setSongName (String songName) {
-		this.songName = songName;
+	@ Override
+	public void getListOfTrackNames () {
+		System.out.println ("List of pop music tracks: ");
+		for (String trackName : trackNames) {
+			System.out.println ("\t\t\t" + trackName);
+		}
 	}
 
 }
