@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.context.annotation.Scope;
 
 import edu.spring_framework_app.entities.MusicPlayer;
 import edu.spring_framework_app.music.ClassicalMusic;
@@ -16,8 +15,10 @@ import edu.spring_framework_app.music.RockMusic;
 
 public class AppConfiguration {
 	static final String            PROPERTY_SOURCE = "classpath:music-player.properties";
+	
 	@ Value ("${classicalMusic_1.trackNames}")
 	private static final String [] trackNames_1    = null;
+	
 	@ Value ("${classicalMusic_2.trackNames}")
 	private static final String [] trackNames_2    = null;
 
